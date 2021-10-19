@@ -1,11 +1,11 @@
 package printed_products;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import printed_products.printed_product.PrintedProduct;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 public class Magazine extends PrintedProduct {}

@@ -13,8 +13,10 @@ public abstract class AbstractConnection {
     private static Connection connection;
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName(DRIVER);
-        connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        if (connection == null) {
+            Class.forName(DRIVER);
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        }
         return connection;
     }
 
