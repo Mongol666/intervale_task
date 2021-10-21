@@ -14,7 +14,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public abstract class PrintedProduct {
+public class PrintedProduct {
     private int id;
     private String name;
     private Author author;

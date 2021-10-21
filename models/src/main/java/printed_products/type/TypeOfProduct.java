@@ -11,5 +11,4 @@ public enum TypeOfProduct {
     NEWSPAPER("Газета");
 
     private String name;
-
 }
