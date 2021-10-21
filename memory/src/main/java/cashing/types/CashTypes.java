@@ -21,7 +21,7 @@ public final class CashTypes {
      * @throws SQLException : обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static List<TypeOfProduct> getPublishOffices() throws SQLException, ClassNotFoundException {
+    public static List<TypeOfProduct> getTypes() throws SQLException, ClassNotFoundException {
         //результат работы метода
         List<TypeOfProduct> types = new ArrayList<>();
 
