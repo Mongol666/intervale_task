@@ -58,7 +58,9 @@ public final class CashProducts {
             String type_name = set.getString(8);
             TypeOfProduct type = getType(type_name);
 
-            printedProducts.add(new PrintedProduct(printed_product_id, printed_product_name,
+            printedProducts.add(new PrintedProduct(
+                    printed_product_id,
+                    printed_product_name,
                     new Author(author_id, author_name),
                     type,
                     date,

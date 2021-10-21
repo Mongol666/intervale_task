@@ -1,6 +1,7 @@
 package printed_products.printed_product;
 
 import authors.Author;
+import lombok.Setter;
 import printed_products.type.TypeOfProduct;
 import publishing_office.PublishOffice;
 
@@ -14,6 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 public class PrintedProduct {
     private int id;
     private String name;
