@@ -52,7 +52,8 @@ public class CreatingPrintedProduct {
             publish_office_id = getPublishOfficeID(publish_office_name, connection);
         }
         if (type_id == 0) {
-            throw new SQLException("Нет такого типа продукции: " + type_name);
+            CreatingType.createType(type_name, connection);
+            type_id = getTypeID(type_name, connection);
         }
 
         statement.setString(1, printed_product_name);
@@ -90,45 +91,39 @@ public class CreatingPrintedProduct {
     }
 
     private static int getPublishOfficeID(String publish_office_name, Connection connection) throws SQLException {
-        int publish_office_id = 0;
-
         PreparedStatement statementForSelectPublishOfficeID = connection.prepareStatement(SELECT_ID_FROM_PUBLISH_OFFICES);
         statementForSelectPublishOfficeID.setString(1, publish_office_name);
-        statementForSelectPublishOfficeID.execute();
 
         ResultSet set = statementForSelectPublishOfficeID.executeQuery();
         if (set.next()) {
-            publish_office_id = set.getInt(1);
+            return set.getInt(1);
+        } else {
+            throw new SQLException("Издательство " + publish_office_name + " не найдено.");
         }
 
-        return publish_office_id;
     }
 
     private static int getAuthorID(String author_name, Connection connection) throws SQLException {
-        int author_id = 0;
-
         PreparedStatement statementForSelectAuthorID = connection.prepareStatement(SELECT_ID_FROM_AUTHORS);
         statementForSelectAuthorID.setString(1, author_name);
-        statementForSelectAuthorID.execute();
 
         ResultSet set = statementForSelectAuthorID.executeQuery();
         if (set.next()) {
-            author_id = set.getInt(1);
+            return set.getInt(1);
+        } else {
+            throw new SQLException("Автор " + author_name + " не найден.");
         }
-        return author_id;
     }
 
     private static int getTypeID(String type_name, Connection connection) throws SQLException {
-        int type_id = 0;
-
         PreparedStatement statementForSelectAuthorID = connection.prepareStatement(SELECT_ID_FROM_TYPES);
         statementForSelectAuthorID.setString(1, type_name);
-        statementForSelectAuthorID.execute();
 
         ResultSet set = statementForSelectAuthorID.executeQuery();
         if (set.next()) {
-            type_id = set.getInt(1);
+            return set.getInt(1);
+        } else {
+            throw new SQLException("Тип продукции " + type_name + " не найден.");
         }
-        return type_id;
     }
 }
