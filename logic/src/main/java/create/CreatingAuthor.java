@@ -1,7 +1,5 @@
 package create;
 
-import authors.Author;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
