@@ -4,6 +4,6 @@
     <title>Ошибка</title>
 </head>
 <body>
-    <%= request.getAttribute("exception")%>
+    <%= request.getAttribute("exception") %>
 </body>
 </html>

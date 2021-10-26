@@ -98,9 +98,8 @@ public class CreatingPrintedProduct {
         ResultSet set = statementForSelectPublishOfficeID.executeQuery();
         if (set.next()) {
             return set.getInt(1);
-        } else {
-            throw new SQLException("Издательство " + publish_office_name + " не найдено.");
         }
+        return 0;
 
     }
 
@@ -111,9 +110,8 @@ public class CreatingPrintedProduct {
         ResultSet set = statementForSelectAuthorID.executeQuery();
         if (set.next()) {
             return set.getInt(1);
-        } else {
-            throw new SQLException("Автор " + author_name + " не найден.");
         }
+        return 0;
     }
 
     private static int getTypeID(String type_name, Connection connection) throws SQLException {
@@ -123,8 +121,7 @@ public class CreatingPrintedProduct {
         ResultSet set = statementForSelectAuthorID.executeQuery();
         if (set.next()) {
             return set.getInt(1);
-        } else {
-            throw new SQLException("Тип продукции " + type_name + " не найден.");
         }
+        return 0;
     }
 }

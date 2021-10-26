@@ -10,12 +10,32 @@
 
     <servlet>
         <servlet-name>CheckProducts</servlet-name>
-        <jsp-file>/read_products.jsp</jsp-file>
+        <jsp-file>/read.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>CheckProducts</servlet-name>
         <url-pattern>/reading</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateNewProduct</servlet-name>
+        <jsp-file>/create.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreateNewProduct</servlet-name>
+        <url-pattern>/creating</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreatedNewProduct</servlet-name>
+        <jsp-file>/created_product.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreatedNewProduct</servlet-name>
+        <url-pattern>/created</url-pattern>
     </servlet-mapping>
 
     <servlet>
