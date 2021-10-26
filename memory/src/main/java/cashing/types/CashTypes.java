@@ -1,9 +1,9 @@
 package cashing.types;
 
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 import printed_products.type.TypeOfProduct;
-import publishing_office.PublishOffice;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,12 +21,12 @@ public final class CashTypes {
      * @throws SQLException : обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static List<TypeOfProduct> getTypes() throws SQLException, ClassNotFoundException {
+    public static List<TypeOfProduct> getTypes() throws SQLException, ClassNotFoundException, IOException {
         //результат работы метода
         List<TypeOfProduct> types = new ArrayList<>();
 
         //создание Connection-а к БД
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         //создание PrepareStatement-а
         PreparedStatement statement = connection.prepareStatement(SELECT_FROM_TYPES);

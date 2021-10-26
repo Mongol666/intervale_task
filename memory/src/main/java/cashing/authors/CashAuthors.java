@@ -1,8 +1,9 @@
 package cashing.authors;
 
 import authors.Author;
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,12 +22,12 @@ public final class CashAuthors {
      * @throws SQLException: обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static List<Author> getAuthorsFromTable() throws SQLException, ClassNotFoundException {
+    public static List<Author> getAuthorsFromTable() throws SQLException, ClassNotFoundException, IOException {
         //результат работы метода
         List<Author> authors = new ArrayList<>();
 
         //создание Connection-а к БД
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         //создание PrepareStatement-а
         PreparedStatement statement = connection.prepareStatement(SELECT_FROM_AUTHORS);

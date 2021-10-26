@@ -3,6 +3,7 @@ package read;
 import cashing.types.CashTypes;
 import printed_products.type.TypeOfProduct;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class ReadingTypes {
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
 
-    public static List<TypeOfProduct> readingTypes() throws SQLException, ClassNotFoundException {
+    public static List<TypeOfProduct> readingTypes() throws SQLException, ClassNotFoundException, IOException {
         return CashTypes.getTypes();
     }
 }

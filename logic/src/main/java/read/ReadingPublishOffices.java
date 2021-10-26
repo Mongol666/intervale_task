@@ -3,6 +3,7 @@ package read;
 import cashing.publish_offices.CashPublishOffices;
 import publishing_office.PublishOffice;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ReadingPublishOffices {
      * @throws SQLException : обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static List<PublishOffice> readingPublishOffices() throws SQLException, ClassNotFoundException {
+    public static List<PublishOffice> readingPublishOffices() throws SQLException, ClassNotFoundException, IOException {
         return CashPublishOffices.getPublishOffices();
     }
 }

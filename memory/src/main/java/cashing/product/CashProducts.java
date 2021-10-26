@@ -1,11 +1,12 @@
 package cashing.product;
 
 import authors.Author;
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 import printed_products.printed_product.PrintedProduct;
 import printed_products.type.TypeOfProduct;
 import publishing_office.PublishOffice;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,12 +31,12 @@ public final class CashProducts {
                     "INNER JOIN publish_offices po on pp.publish_office = po.id\n" +
                     "INNER JOIN types t on pp.type = t.id";
 
-    public static List<PrintedProduct> getPrintedProducts() throws SQLException, ClassNotFoundException {
+    public static List<PrintedProduct> getPrintedProducts() throws SQLException, ClassNotFoundException, IOException {
         // результат рабоыт метода
         List<PrintedProduct> printedProducts = new ArrayList<>();
 
         // создание Connection-а к БД
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         // создание PrepareStatement-а
         PreparedStatement statement = connection.prepareStatement(SELECT_FROM_PRINTED_PRODUCT);
@@ -91,9 +92,9 @@ public final class CashProducts {
     }
 
     private static void close(Connection connection, PreparedStatement statement, ResultSet set) throws SQLException {
+        connection.close();
         statement.close();
         set.close();
-        connection.close();
     }
 
 }

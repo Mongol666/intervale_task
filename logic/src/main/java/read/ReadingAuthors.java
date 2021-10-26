@@ -3,6 +3,7 @@ package read;
 import authors.Author;
 import cashing.authors.CashAuthors;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ReadingAuthors {
      * @throws SQLException: обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static List<Author> readingAuthors() throws SQLException, ClassNotFoundException {
+    public static List<Author> readingAuthors() throws SQLException, ClassNotFoundException, IOException {
         return CashAuthors.getAuthorsFromTable();
     }
 }

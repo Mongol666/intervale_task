@@ -1,7 +1,8 @@
 package delete;
 
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -25,9 +26,9 @@ public class DeleteAuthor {
      * @throws SQLException: обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static void deleteAuthor(String author_name) throws SQLException, ClassNotFoundException {
+    public static void deleteAuthor(String author_name) throws SQLException, ClassNotFoundException, IOException {
         // создание Connection-а
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         // создание PreparedStatement-а для получения id автора по имени
         PreparedStatement statementForGetAuthorID = connection.prepareStatement(GET_ID_BY_AUTHOR_NAME);

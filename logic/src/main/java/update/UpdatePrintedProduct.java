@@ -1,7 +1,8 @@
 package update;
 
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -23,9 +24,9 @@ public class UpdatePrintedProduct {
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
     public static void updatePrintedProductName(String old_printed_product_name,
-                                            String new_printed_product_name) throws SQLException, ClassNotFoundException {
+                                            String new_printed_product_name) throws SQLException, ClassNotFoundException, IOException {
         // создание Connection-а
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         // создание PrepareStatement-а
         PreparedStatement statement = connection.prepareStatement(UPDATE_PRINTED_PRODUCT_NAME);
@@ -44,9 +45,9 @@ public class UpdatePrintedProduct {
      * @throws SQLException : обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static void updatePrintedProductDate(String printed_product_name, LocalDate new_date) throws SQLException, ClassNotFoundException {
+    public static void updatePrintedProductDate(String printed_product_name, LocalDate new_date) throws SQLException, ClassNotFoundException, IOException {
         // создание Connection-а
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         // создание PrepareStatement-а
         PreparedStatement statement = connection.prepareStatement(UPDATE_PRINTED_PRODUCT_DATE);

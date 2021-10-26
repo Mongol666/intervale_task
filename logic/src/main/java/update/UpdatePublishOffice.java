@@ -1,7 +1,8 @@
 package update;
 
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,9 +19,9 @@ public class UpdatePublishOffice {
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
     public static void updateAuthor(String old_publish_office_name,
-                                    String new_publish_office_name) throws SQLException, ClassNotFoundException {
+                                    String new_publish_office_name) throws SQLException, ClassNotFoundException, IOException {
         // создание Connection-а
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         // создание PrepareStatement-а
         PreparedStatement statement = connection.prepareStatement(UPDATE_PUBLISH_OFFICE_NAME);

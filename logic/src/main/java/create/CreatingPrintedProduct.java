@@ -1,11 +1,12 @@
 package create;
 
 import authors.Author;
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 import printed_products.printed_product.PrintedProduct;
 import printed_products.type.TypeOfProduct;
 import publishing_office.PublishOffice;
 
+import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -28,12 +29,12 @@ public class CreatingPrintedProduct {
                                                       String author_name,
                                                       String publish_office_name,
                                                       String type_name,
-                                                      LocalDate date) throws SQLException, ClassNotFoundException {
+                                                      LocalDate date) throws SQLException, ClassNotFoundException, IOException {
         // результат работы метода
         PrintedProduct printedProduct = new PrintedProduct();
 
         // создание Connection-а
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         // создание PrepareStatement-а
         PreparedStatement statement = connection.prepareStatement(INSERT_INTO_PRINTED_PRODUCT);

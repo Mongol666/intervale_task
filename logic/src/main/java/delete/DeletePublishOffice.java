@@ -1,7 +1,8 @@
 package delete;
 
-import connection.AbstractConnection;
+import connection.AbstractDataSource;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -25,9 +26,9 @@ public class DeletePublishOffice {
      * @throws SQLException : обрабатывается в модуле app
      * @throws ClassNotFoundException: обрабатывается в модуле app
      */
-    public static void deletePublishOffice(String publish_office_name) throws SQLException, ClassNotFoundException {
+    public static void deletePublishOffice(String publish_office_name) throws SQLException, ClassNotFoundException, IOException {
         // создание Connection-а
-        Connection connection = AbstractConnection.getConnection();
+        Connection connection = AbstractDataSource.getInstance().getConnection();
 
         // создание PreparedStatement-а для получения id издательства по имени
         PreparedStatement statementForGetPublishOfficeID = connection.prepareStatement(GET_ID_BY_PUBLISH_OFFICE_NAME);
