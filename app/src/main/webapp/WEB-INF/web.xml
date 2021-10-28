@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    
+    <welcome-file-list>
+        <welcome-file>/index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>CheckProducts</servlet-name>
+        <jsp-file>/reading/read.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CheckProducts</servlet-name>
+        <url-pattern>/reading</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateNewProduct</servlet-name>
+        <jsp-file>/creating/create.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreateNewProduct</servlet-name>
+        <url-pattern>/creating</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreatedNewProduct</servlet-name>
+        <jsp-file>/creating/created_product.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreatedNewProduct</servlet-name>
+        <url-pattern>/created</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Update</servlet-name>
+        <jsp-file>/updating/update.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateAuthor</servlet-name>
+        <jsp-file>/updating/update_author/update_author.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateAuthor</servlet-name>
+        <url-pattern>/update_author</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdatePublishOffice</servlet-name>
+        <jsp-file>/updating/update_publish_office/update_publish_office.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdatePublishOffice</servlet-name>
+        <url-pattern>/update_publish_office</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdatePrintedProductName</servlet-name>
+        <jsp-file>/updating/update_printed_product/update_printed_product_name.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdatePrintedProductName</servlet-name>
+        <url-pattern>/update_printed_product_name</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Exception</servlet-name>
+        <jsp-file>/exception.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Exception</servlet-name>
+        <url-pattern>/exception</url-pattern>
+    </servlet-mapping>
+
+</web-app>
