@@ -22,6 +22,6 @@
     </c:forEach>
 </table>
 
-<a style="display: block" href="index.html">На главную</a>
+<a style="display: block" href="../index.html">На главную</a>
 </body>
 </html>

@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Optional;
 
-@WebServlet(value = "/create_product")
+@WebServlet(value = "/create_product_servlet", name = "CreateProductServlet")
 public class CreateServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

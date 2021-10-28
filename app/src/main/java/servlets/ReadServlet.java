@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(value = "/read_products")
+@WebServlet(value = "/read_products_servlet", name = "ReadProductServlet")
 public class ReadServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

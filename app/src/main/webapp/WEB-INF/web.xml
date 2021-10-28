@@ -10,7 +10,7 @@
 
     <servlet>
         <servlet-name>CheckProducts</servlet-name>
-        <jsp-file>/read.jsp</jsp-file>
+        <jsp-file>/reading/read.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
@@ -20,7 +20,7 @@
 
     <servlet>
         <servlet-name>CreateNewProduct</servlet-name>
-        <jsp-file>/create.jsp</jsp-file>
+        <jsp-file>/creating/create.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
@@ -30,12 +30,52 @@
 
     <servlet>
         <servlet-name>CreatedNewProduct</servlet-name>
-        <jsp-file>/created_product.jsp</jsp-file>
+        <jsp-file>/creating/created_product.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>CreatedNewProduct</servlet-name>
         <url-pattern>/created</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Update</servlet-name>
+        <jsp-file>/updating/update.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateAuthor</servlet-name>
+        <jsp-file>/updating/update_author/update_author.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateAuthor</servlet-name>
+        <url-pattern>/update_author</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdatePublishOffice</servlet-name>
+        <jsp-file>/updating/update_publish_office/update_publish_office.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdatePublishOffice</servlet-name>
+        <url-pattern>/update_publish_office</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdatePrintedProductName</servlet-name>
+        <jsp-file>/updating/update_printed_product/update_printed_product_name.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdatePrintedProductName</servlet-name>
+        <url-pattern>/update_printed_product_name</url-pattern>
     </servlet-mapping>
 
     <servlet>

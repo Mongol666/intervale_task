@@ -5,6 +5,6 @@
 </head>
 <body>
     <%= "Создано изделие: " + request.getAttribute("created_printed_product")%>
-    <a style="display: block" href="index.html">На главную</a>
+    <a style="display: block" href="../index.html">На главную</a>
 </body>
 </html>
